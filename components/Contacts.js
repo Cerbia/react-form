@@ -8,7 +8,7 @@ var Contacts = React.createClass({
                 React.createElement(Contact, {url: item.photo ,name: item.firstName, surname: item.lastName, email: item.email})
             );
         });
-        return React.createElement('ul', {}, contacts);
+        return <ul>{contacts}</ul>
     }
 });
 

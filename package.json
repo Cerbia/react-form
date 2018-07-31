@@ -14,12 +14,12 @@
     "build:clean": "rimraf css/*",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
-    "build:babel": "babel components/App.js -o build/main.bundle.js",
+    "build:babel": "babel components --out-file build/main.bundle.js",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch": "npm-run-all build -p watch:*",
     "watch:sass": "node-sass --output-style expanded --source-map true -o css sass --watch",
     "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all build:sass build:autoprefixer",
-    "watch:babel": "onchange js/*.js -- npm-run-all build:babel",
+    "watch:babel": "onchange components/*.js -- npm-run-all build:babel",
     "watch:browsersync": "browser-sync start --server --files css/*.css *.html"
   },
   "repository": {
@@ -37,6 +37,7 @@
     "autoprefixer-cli": "^1.0.0",
     "babel-cli": "^6.26.0",
     "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.24.4",
     "globstar": "^1.0.0",
     "mkdirp": "^0.5.1",
